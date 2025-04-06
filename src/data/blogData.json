@@ -1,0 +1,38 @@
+[
+    {
+      "id": "bien-utiliser-medicaments",
+      "title": "Comment bien utiliser les médicaments ?",
+      "image": "https://images.pexels.com/photos/139398/thermometer-headache-pain-pills-139398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "excerpt": "Découvrez les bonnes pratiques pour un usage responsable des traitements au quotidien.",
+      "content": "## Comment bien utiliser les médicaments ?\n\nRespecter la posologie, éviter l'automédication et ne jamais partager ses médicaments sont des gestes essentiels.\n\n## Conseils clés\n\n- Suivez les instructions de votre médecin.\n- Ne stoppez jamais un traitement sans avis médical.\n- Lisez toujours la notice.\n\n> \"Un bon usage du médicament protège votre santé.\"\n\n## À retenir\n\nConsultez votre pharmacien en cas de doute."
+    },
+    {
+      "id": "erreurs-pilulier",
+      "title": "Les erreurs à éviter avec votre pilulier",
+      "image": "https://source.unsplash.com/600x400/?pill,box",
+      "excerpt": "Le pilulier est un outil précieux, à condition de l’utiliser correctement. Voici les erreurs à ne pas commettre.",
+      "content": "# Les erreurs à éviter avec votre pilulier\n\nUtiliser un pilulier peut améliorer l’observance, mais encore faut-il bien l’utiliser !\n\n## Top erreurs\n\n1. Mauvais remplissage\n2. Confusion des jours\n3. Exposition à la chaleur ou l’humidité\n\n## Astuce\n\nRemplissez-le au calme, à heure fixe, idéalement avec une tierce personne si besoin."
+    },
+    {
+      "id": "observance-senior",
+      "title": "Vieillir en bonne santé grâce à une meilleure observance",
+      "image": "https://source.unsplash.com/600x400/?senior,wellness",
+      "excerpt": "Pour les personnes âgées, suivre correctement leur traitement est essentiel pour vieillir en forme.",
+      "content": "# Vieillir en bonne santé\n\nL’observance thérapeutique est un pilier de la santé des séniors.\n\n## Pourquoi c’est important ?\n\n- Meilleure efficacité des traitements\n- Moins d’hospitalisations\n- Plus d’autonomie\n\n## Nos conseils\n\n- Utilisez des rappels\n- Échangez avec votre médecin\n- Faites des bilans réguliers"
+    },
+    {
+      "id": "role-professionnels",
+      "title": "Le rôle des professionnels dans le bon usage du médicament",
+      "image": "https://source.unsplash.com/600x400/?doctor,pharmacist",
+      "excerpt": "Les médecins et pharmaciens ont un rôle clé dans l’accompagnement du patient.",
+      "content": "# Rôle des professionnels de santé\n\nLes professionnels accompagnent, conseillent et rassurent les patients.\n\n## Médecin\n\n- Diagnostique précis\n- Prescription adaptée\n\n## Pharmacien\n\n- Conseil sur l’usage\n- Détection des interactions\n\n> \"Une bonne communication améliore l’observance.\""
+    },
+    {
+      "id": "education-therapeutique",
+      "title": "L’éducation thérapeutique : un outil pour mieux comprendre son traitement",
+      "image": "https://source.unsplash.com/600x400/?education,healthcare",
+      "excerpt": "Comprendre pourquoi et comment prendre son traitement améliore sa santé.",
+      "content": "# L’éducation thérapeutique\n\nElle vise à aider le patient à mieux gérer sa maladie au quotidien.\n\n## Objectifs\n\n- Comprendre la maladie\n- Maîtriser son traitement\n- Devenir acteur de sa santé\n\n## Exemple\n\nDes ateliers avec infirmiers, des livrets explicatifs, ou des applications santé peuvent accompagner cette démarche."
+    }
+  ]
+  
