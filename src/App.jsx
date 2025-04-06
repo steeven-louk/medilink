@@ -1,15 +1,14 @@
 
 import './App.css'
-import Heros from './components/heros'
-import Navbar from './components/navbar'
+
+// import Testimonial from './components/testimonial'
 
 function App() {
 
-  
+ 
   return (
     <>
-      <Navbar/>
-      <Heros/>
+     <span>App</span>
     </>
   )
 }
