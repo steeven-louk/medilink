@@ -13,7 +13,7 @@ const Navbar = () => {
     },
     {
      name:'notre pilulier',
-      lien:"/"
+      lien:"/notrePilulier"
     },
     {
      name:'boutique',

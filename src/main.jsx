@@ -3,10 +3,13 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import {BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Acceuil from './pages/acceuil/acceuil.jsx'
-import { Contact } from 'lucide-react'
+// import { Contact } from 'lucide-react'
 import Blog from './pages/blog/Blog.jsx'
 import BlogDetails from './pages/blog/blogDetails.jsx'
 import RootLayout from './pages/layouts/rootLayout.jsx'
+import Contact from './pages/contact/contact.jsx'
+import NotrePilulier from './pages/notrePilulier/notrePililuer.jsx'
+import Boutique from './pages/boutique/boutique.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,14 @@ const router = createBrowserRouter([
     {
       path:"/blog/:slug",
       element:<BlogDetails/>,
+    },
+    {
+      path:"/notrePilulier",
+      element:<NotrePilulier/>,
+    },
+    {
+      path:"/boutique",
+      element:<Boutique/>,
     },
     ]
   }
