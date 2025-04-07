@@ -5,7 +5,6 @@ const products = [
     id: 1,
     name: "Pilulier Classique",
     description: "Coffret complet pour organiser vos médicaments.",
-    price: "19.99€",
     category: "Piluliers",
     image: "/assets/pilulier.png",
   },
@@ -14,7 +13,6 @@ const products = [
     id: 2,
     name: "Boîte de rangement",
     description: "Boîte de rangement pour les médicaments.",
-    price: "15.99€",
     category: "Accessoires",
     image: "/assets/pilulink.png",
   }
@@ -52,7 +50,7 @@ const Boutique = () => {
         </button>
       </div>
 
-      {/* Products Grid */}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {filteredProducts.map((product) => (
           <div key={product.id} className="shadow-lg rounded-lg overflow-hidden bg-white">
@@ -62,14 +60,9 @@ const Boutique = () => {
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h2 className="text-xl font-semibold">{product.name}</h2>
+              <h2 className="text-xl text-black font-semibold">{product.name}</h2>
               <p className="text-gray-600 mt-2">{product.description}</p>
-              <div className="flex justify-between items-center mt-4">
-                <span className="text-lg font-bold">{product.price}</span>
-                <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">
-                  Ajouter au panier
-                </button>
-              </div>
+
             </div>
           </div>
         ))}
