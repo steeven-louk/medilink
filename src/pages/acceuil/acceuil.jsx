@@ -41,6 +41,17 @@ const Acceuil = () => {
     </div>
   ))}
 </section>
+<section className='bg-[#032749] my-5'>
+  <div className='flex flex-wrap container mx-auto '>
+  <div className=' flex-1 p-4 my-auto'>
+    <h2 className='text-2xl md:text-4xl'>Medilink favorise le bon usage du médicament pour vieillir en bonne santé.</h2>
+    <a href="/notrePilulier"><button className='uppercase mt-4'>en savoir plus</button></a>
+  </div>
+  <div className='md:flex-1'>
+    <img src="/assets/groupe-medissimo.png" className='w-full objecr-cover' alt="groupe medissimo" />
+  </div>
+  </div>
+</section>
 
       <Testimonial/>
     </>

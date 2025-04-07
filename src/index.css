@@ -75,7 +75,7 @@ button:focus-visible {
 
 @media  only screen  and (max-width:650px) {
   .header_component{
-    background: rgb(3, 39, 73);
+    background: #032749;
     width: 100%;
     height: calc(100vh - 80px);
   }
