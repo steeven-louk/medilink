@@ -7,7 +7,7 @@ const products = [
     description: "Pilulier simple pour une prise facile.",
     price: "19.99€",
     category: "Piluliers",
-    image: "https://via.placeholder.com/400x300?text=Pilulier+Classique",
+    image: "/assets/pilulier-simple.png",
   },
   {
     id: 2,
