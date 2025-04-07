@@ -4,50 +4,19 @@ const products = [
   {
     id: 1,
     name: "Pilulier Classique",
-    description: "Pilulier simple pour une prise facile.",
+    description: "Coffret complet pour organiser vos médicaments.",
     price: "19.99€",
     category: "Piluliers",
-    image: "/assets/pilulier-simple.png",
+    image: "/assets/pilulier.png",
   },
+
   {
     id: 2,
-    name: "Pilulier Semaine",
-    description: "Pilulier organisé par jours de la semaine.",
-    price: "24.99€",
-    category: "Piluliers",
-    image: "/assets/pilulier-orga.png",
-  },
-  {
-    id: 3,
-    name: "Pilulier Voyage",
-    description: "Pilulier compact et pratique pour les voyages.",
-    price: "29.99€",
-    category: "Piluliers",
-    image: "https://via.placeholder.com/400x300?text=Pilulier+Voyage",
-  },
-  {
-    id: 4,
-    name: "Pilulier Complet",
-    description: "Pilulier avec plusieurs compartiments.",
-    price: "34.99€",
-    category: "Piluliers",
-    image: "https://via.placeholder.com/400x300?text=Pilulier+Complet",
-  },
-  {
-    id: 5,
-    name: "Coffret de Médicaments",
-    description: "Coffret complet pour organiser vos médicaments.",
-    price: "49.99€",
-    category: "Coffrets",
-    image: "https://via.placeholder.com/400x300?text=Coffret+de+Médicaments",
-  },
-  {
-    id: 6,
     name: "Boîte de rangement",
     description: "Boîte de rangement pour les médicaments.",
     price: "15.99€",
     category: "Accessoires",
-    image: "/assets/boite-rang.png",
+    image: "/assets/pilulink.png",
   }
 ];
 
@@ -74,12 +43,7 @@ const Boutique = () => {
         >
           Piluliers
         </button>
-        <button
-          onClick={() => setFilter('Coffrets')}
-          className="bg-yellow-500 text-white py-2 px-4 rounded-md mx-2 hover:bg-yellow-600 transition"
-        >
-          Coffrets
-        </button>
+
         <button
           onClick={() => setFilter('Accessoires')}
           className="bg-gray-500 text-white py-2 px-4 rounded-md mx-2 hover:bg-gray-600 transition"
