@@ -15,7 +15,7 @@ const products = [
     description: "Pilulier organisé par jours de la semaine.",
     price: "24.99€",
     category: "Piluliers",
-    image: "https://via.placeholder.com/400x300?text=Pilulier+Semaine",
+    image: "/assets/pilulier-orga.png",
   },
   {
     id: 3,
