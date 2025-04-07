@@ -10,6 +10,7 @@ import RootLayout from './pages/layouts/rootLayout.jsx'
 import Contact from './pages/contact/contact.jsx'
 import NotrePilulier from './pages/notrePilulier/notrePililuer.jsx'
 import Boutique from './pages/boutique/boutique.jsx'
+import ConditionsUtilisation from './pages/condition-general/condition.jsx'
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       path:"/boutique",
       element:<Boutique/>,
     },
+    {
+  path:"/conditions-utilisation",
+  element:<ConditionsUtilisation/>,
+}
     ]
   }
 ])
