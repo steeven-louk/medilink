@@ -11,10 +11,10 @@ const Heros = () => {
           Un enjeu de santé publique majeur qui nous concerne tous, des patients aux professionnels de santé. Chacun a un rôle à jouer, à chaque étape pour favoriser la bonne utilisation des médicaments.
         </p>
         <p className="mt-4 font-semibold ">
-          Le respect de la prescription améliore l’efficacité et la sécurité des médicaments pour vieillir en bonne santé.
+        Un pilulier malin et coloré, connecté à votre appli mobile, pour suivre vos traitements en toute simplicité ! Plus d'oubli, plus de tracas : votre pilulier vous rappelle vos médicaments et alerte vos proches en cas de besoin. Une gestion facile, pratique et rassurante au quotidien   
         </p>
         <button className="mt-6 bg-green-500 text-white px-6 py-2 rounded-md shadow hover:bg-green-600 transition duration-300">
-          Découvrez nos piluliers
+          Découvrez notre pilulier
         </button>
       </div>
     </header>

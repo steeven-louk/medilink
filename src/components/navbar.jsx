@@ -30,13 +30,15 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full sticky top-0 bg-black shadow-sm">
+    <header className="w-full sticky top-0 bg-white shadow-sm">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <span className="text-green-500 text-xl font-bold capitalize">slogon</span>
+        <span className="text-green-500 text-xl font-bold capitalize">
+        <img src='./assets/logo.png' className='object-cover w-[7rem]'/>
+        </span>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex space-x-6 font-semibold capitalize">
+        <ul className="hidden md:flex space-x-6 font-semibold text-black capitalize">
           {links.map((link, idx) => (
             <li
               key={idx}
@@ -55,7 +57,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden px-4 pb-4 space-y-2 font-semibold capitalize">
+        <ul className="md:hidden px-4 pb-4 space-y-2 font-semibold text-black capitalize">
           {links.map((link, idx) => (
             <li
               key={idx}

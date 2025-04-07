@@ -5,19 +5,19 @@ import Testimonial from '../../components/testimonial'
 const Acceuil = () => {
     const icons =[
     {
-      ico:"./assets/star.png",
+      ico:"./assets/patient-70ans-1.svg",
       name:"fiabilité"
     },
     {
-      ico:"./assets/star.png",
+      ico:"./assets/aidant-home-3.svg",
       name:"sécurité"
     },
     {
-      ico:"./assets/star.png",
+      ico:"./assets/medecin-bilan-2.svg",
       name:"service"
     },
     {
-      ico:"./assets/star.png",
+      ico:"./assets/Group-119.png.webp",
       name:"Alerte"
     },
   ]

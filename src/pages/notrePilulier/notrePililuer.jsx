@@ -1,51 +1,30 @@
 import React from 'react';
 
-const piluliers = [
-  {
-    id: 1,
-    name: "Pilulier Classique",
-    description: "Un pilulier simple pour une prise de médicaments facile.",
-    image: "https://via.placeholder.com/400x300?text=Pilulier+Classique",
-  },
-  {
-    id: 2,
-    name: "Pilulier Semaine",
-    description: "Pilulier organisé par jours de la semaine pour un suivi plus précis.",
-    image: "https://via.placeholder.com/400x300?text=Pilulier+Semaine",
-  },
-  {
-    id: 3,
-    name: "Pilulier Voyage",
-    description: "Pilulier compact et pratique pour vos déplacements.",
-    image: "https://via.placeholder.com/400x300?text=Pilulier+Voyage",
-  },
-  {
-    id: 4,
-    name: "Pilulier Complet",
-    description: "Pilulier avec plusieurs compartiments pour chaque prise de médicament.",
-    image: "https://via.placeholder.com/400x300?text=Pilulier+Complet",
-  },
-];
 
 const NotrePilulier = () => {
   return (
     <section className="container mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold text-center mb-8 capitalize">Notre Pilulier</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {piluliers.map((pilulier) => (
-          <div key={pilulier.id} className="shadow-lg rounded-lg overflow-hidden bg-white">
-            <img
-              src={pilulier.image}
-              alt={pilulier.name}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{pilulier.name}</h2>
-              <p className="text-gray-600 mt-2">{pilulier.description}</p>
-            </div>
-          </div>
-        ))}
+      <div className="flex  flex-wrap-reverse gap-8 mt-5">
+      <div className="md:w-[45rem] my-auto">
+     <h2 className='text-2xl'> 💊 Bienvenue chez MediLink – Le pilulier intelligent qui prend soin de vous</h2>
+    <p>MediLink révolutionne la gestion des traitements médicaux grâce à un pilulier connecté, élégant et pratique.
+    Doté de compartiments colorés (rouge, bleu, vert, jaune), chacun dédié à un type de médicament, notre pilulier vous accompagne pour un suivi mensuel complet, en toute simplicité.</p>
+<ul className='flex flex-col gap-3'>
+  <li>✔️ LED intelligentes : les compartiments du jour s’allument pour vous guider</li>
+  <li>✔️ Application mobile intuitive : suivez vos prises, recevez des rappels et alertez vos proches en cas d’oubli</li>
+  <li>✔️ Connexion via QR code : accès rapide à l’app pour les utilisateurs et aidants</li>
+  <li>✔️ Autonomie de 48h : idéal au quotidien comme en déplacement</li>
+  <li>✔️ Design moderne et compact : un objet de santé qui s’intègre à votre vie</li>
+</ul>
+
+<p>Que vous soyez patient, aidant ou professionnel de santé, MediLink facilite l’observance du traitement, réduit les oublis et renforce la sérénité de toute la famille.</p>
+<p>🧠 Prenez soin de votre santé, un compartiment à la fois.</p>
+      </div>
+      <div className="flex-1">
+        <img src="./assets/pilulier.png" alt="" className='object-cover' />
+      </div>
       </div>
     </section>
   );
