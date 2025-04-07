@@ -47,7 +47,7 @@ const products = [
     description: "Boîte de rangement pour les médicaments.",
     price: "15.99€",
     category: "Accessoires",
-    image: "https://via.placeholder.com/400x300?text=Boîte+de+rangement",
+    image: "/assets/boite-rang.png",
   }
 ];
 

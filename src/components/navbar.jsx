@@ -19,8 +19,8 @@ const Navbar = () => {
     <header className="w-full sticky top-0 bg-white shadow-sm z-50">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <span className="text-green-500 text-xl font-bold capitalize">
-          <img src="./assets/logo.png" className="object-cover w-[7rem]" />
+        <span>
+          <img src={"/assets/logo.png"} className="object-cover w-[7rem]" />
         </span>
 
         {/* Desktop links */}
