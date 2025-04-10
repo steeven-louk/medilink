@@ -17,6 +17,7 @@ import { Toaster } from 'react-hot-toast'
 import Login from './pages/login/login.jsx'
 import ProtectedRoute from './middleware/protectedRoute.jsx'
 import { AuthProvider } from './store/authContext.jsx'
+import PolitiqueConfidentialite from './pages/confidentialite/confidentialite.jsx'
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
     {
   path:"/conditions-utilisation",
   element:<ConditionsUtilisation/>,
+},
+{
+  path: "/politique-confidentialite",
+  element: <PolitiqueConfidentialite />,
 },
 {
   path:"/cart",
