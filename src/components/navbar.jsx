@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Menu, X, ShoppingCart, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import CartIcon from './cardIcon';
+import { useAuth } from '../store/authContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const toggleMenu = () => setIsOpen(!isOpen);
+  const {isAuthenticated} = useAuth();
 
   const links = [
     { name: 'accueil', lien: '/' },
@@ -15,9 +18,7 @@ const Navbar = () => {
     { name: 'contact', lien: '/contact' },
   ];
 
-  const CartCount = localStorage.getItem("count");
-  const cartItemCount = CartCount || 0;
-
+  
   return (
     <header className="w-full sticky top-0 bg-white shadow-sm z-50">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -41,17 +42,22 @@ const Navbar = () => {
             </li>
           ))}
 
+          {!isAuthenticated &&
+          
+          <li className="flex items-center gap-2">
+            <Link to="/login" className="flex items-center gap-1">
+              <User className="w-5 h-5" />
+              <span>connexion</span>
+            </Link>
+          </li>
+          }
           {/* Cart icon */}
           <li className="relative ml-4">
             <Link to="/cart">
-              <ShoppingCart className="w-6 h-6 hover:text-green-500 transition" />
-              {cartItemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                  {cartItemCount}
-                </span>
-              )}
+                <CartIcon/>
             </Link>
           </li>
+          
         </ul>
 
         {/* Mobile menu toggle */}
@@ -80,9 +86,18 @@ const Navbar = () => {
           <li className="flex items-center gap-2 mt-2">
             <Link to="/cart" className="flex items-center gap-1">
               <ShoppingCart className="w-5 h-5" />
-              <span>Panier ({cartItemCount})</span>
+              <span><CartIcon/></span>
             </Link>
           </li>
+          {isAuthenticated &&
+          
+          <li className="flex items-center gap-2 mt-2">
+            <Link to="/login" className="flex items-center gap-1">
+              <User className="w-5 h-5" />
+              <span>login</span>
+            </Link>
+          </li>
+          }
         </ul>
       )}
     </header>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCart } from '../../store/CartContext';
 
 const products = [
   {
@@ -22,20 +23,10 @@ const products = [
 
 const Boutique = () => {
   const [filter, setFilter] = useState('All');
-
+  const {addToCart} = useCart()
   const filteredProducts = filter === 'All' ? products : products.filter(product => product.category === filter);
 
-  const addToCart =(cart)=>{
-    if(!cart)return;
-    const count =0
-    if(cart){
-    localStorage.setItem("count", count+1);
-    localStorage.setItem("product", JSON.stringify(cart.price + cart.price));
 
-    }
-    localStorage.setItem("product", JSON.stringify(cart));
-    localStorage.setItem("count", count+1);
-  }
   return (
     <section className="container mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold text-center mb-8 capitalize">Notre Boutique</h1>
@@ -77,9 +68,9 @@ const Boutique = () => {
               <p className="text-gray-600 mt-2">{product.description}</p>
 
             </div>
-            <div className="flex justify-between items-center mt-4 p-2">
+            <div className="flex justify-between items-center flex-wrap mt-4 p-2">
                 <span className="text-lg text-black font-bold">{product.price}€</span>
-                <button onClick={addToCart(product)} className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">
+                <button onClick={()=>addToCart(product)} className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">
                   Ajouter au panier
                 </button>
               </div>

@@ -12,6 +12,11 @@ import NotrePilulier from './pages/notrePilulier/notrePililuer.jsx'
 import Boutique from './pages/boutique/boutique.jsx'
 import ConditionsUtilisation from './pages/condition-general/condition.jsx'
 import Cart from './pages/cart/cart.jsx'
+import { CartProvider } from './store/CartContext.jsx'
+import { Toaster } from 'react-hot-toast'
+import Login from './pages/login/login.jsx'
+import ProtectedRoute from './middleware/protectedRoute.jsx'
+import { AuthProvider } from './store/authContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -40,7 +45,7 @@ const router = createBrowserRouter([
     },
     {
       path:"/boutique",
-      element:<Boutique/>,
+      element: <Boutique/>,
     },
     {
   path:"/conditions-utilisation",
@@ -48,7 +53,15 @@ const router = createBrowserRouter([
 },
 {
   path:"/cart",
-  element:<Cart/>,
+  element:(
+    <ProtectedRoute>
+      <Cart/>
+    </ProtectedRoute>
+  ),
+},
+{
+  path:"/login",
+  element:<Login/>,
 }
     ]
   }
@@ -56,6 +69,11 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+  <AuthProvider>
+    <CartProvider>
+    <Toaster position="top-right" />
+      <RouterProvider router={router}/>
+    </CartProvider>
+  </AuthProvider>
   </StrictMode>,
 )

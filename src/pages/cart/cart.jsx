@@ -1,53 +1,57 @@
-import React, { useState } from 'react';
+import React from 'react'
+import { useCart } from '../../store/CartContext'
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Pilulier Connecté",
-      price: 29.99,
-      quantity: 1,
-      image: "/assets/pilulier.png",
-    },
-    {
-      id: 2,
-      name: "Boîte de rangement verte",
-      price: 14.99,
-      quantity: 2,
-      image: "/assets/rangement.png",
-    }
-  ]);
+  const { cartItems, removeFromCart, clearCart } = useCart()
 
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+
+  if (cartItems.length === 0) {
+    return (
+      <div className="container mx-auto px-4 py-10 text-center">
+        <h2 className="text-2xl font-semibold mb-4">Votre panier est vide 🛒</h2>
+      </div>
+    )
+  }
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="text-2xl font-bold mb-6">Votre panier</h1>
+      <h2 className="text-2xl font-semibold mb-6">Votre Panier 🛍️</h2>
 
-      {cartItems.length === 0 ? (
-        <p>Le panier est vide.</p>
-      ) : (
-        <div className="space-y-6">
-          {cartItems.map((item) => (
-            <div key={item.id} className="flex items-center gap-4 border-b pb-4">
+      <ul className="space-y-6">
+        {cartItems.map((item) => (
+          <li key={item.id} className="flex items-center justify-between border-b pb-4">
+            <div className="flex items-center space-x-4">
               <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
-              <div className="flex-1">
-                <h2 className="text-lg font-semibold">{item.name}</h2>
-                <p className="text-sm text-gray-500">Quantité : {item.quantity}</p>
-              </div>
-              <div className="text-right font-semibold">
-                {(item.price * item.quantity).toFixed(2)} €
+              <div>
+                <h3 className="text-lg font-medium">{item.name}</h3>
+                <p className="text-sm text-gray-600">Quantité : {item.quantity}</p>
               </div>
             </div>
-          ))}
+            <div className="text-right">
+              <p className="text-green-600 font-bold">{(item.price * item.quantity).toFixed(2)} €</p>
+              <button
+                onClick={() => removeFromCart(item.id)}
+                className="text-red-500 text-sm hover:underline mt-1"
+              >
+                Supprimer
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-          <div className="text-right mt-6 text-lg font-bold">
-            Total : {total} €
-          </div>
-        </div>
-      )}
+      <div className="mt-8 text-right">
+        <p className="text-xl font-semibold">Total : <span className="text-green-600">{totalPrice.toFixed(2)} €</span></p>
+        <button
+          onClick={()=>clearCart()}
+          className="mt-4 bg-red-500 text-white px-5 py-2 rounded hover:bg-red-600 transition"
+        >
+          Vider le panier
+        </button>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

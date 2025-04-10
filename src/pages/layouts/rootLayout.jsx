@@ -4,9 +4,12 @@ import Footer from '../../components/footer'
 import { Outlet } from 'react-router-dom'
 
 const RootLayout = () => {
+
+
   return (
     <>
         <div className="rootLayout">
+
          <Navbar/>
           <main>
             <Outlet />
