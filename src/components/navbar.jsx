@@ -82,14 +82,7 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-          {/* Cart icon on mobile */}
-          <li className="flex items-center gap-2 mt-2">
-            <Link to="/cart" className="flex items-center gap-1">
-              <ShoppingCart className="w-5 h-5" />
-              <span><CartIcon/></span>
-            </Link>
-          </li>
-          {isAuthenticated &&
+          {!isAuthenticated &&
           
           <li className="flex items-center gap-2 mt-2">
             <Link to="/login" className="flex items-center gap-1">
@@ -98,6 +91,13 @@ const Navbar = () => {
             </Link>
           </li>
           }
+          {/* Cart icon on mobile */}
+          <li className="flex items-center gap-2 mt-2">
+            <Link to="/cart" className="flex items-center gap-1">
+             <CartIcon/>
+            </Link>
+          </li>
+        
         </ul>
       )}
     </header>
