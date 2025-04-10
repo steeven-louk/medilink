@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { NavLink } from 'react-router-dom'; // ⬅️ Import de NavLink
+import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const location = useLocation();
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const links = [
@@ -12,33 +12,46 @@ const Navbar = () => {
     { name: 'notre pilulier', lien: '/notrePilulier' },
     { name: 'boutique', lien: '/boutique' },
     { name: 'blog', lien: '/blogs' },
-    { name: 'contact', lien: '/contact' }
+    { name: 'contact', lien: '/contact' },
   ];
+
+  const CartCount = localStorage.getItem("count");
+  const cartItemCount = CartCount || 0;
 
   return (
     <header className="w-full sticky top-0 bg-white shadow-sm z-50">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <span>
-          <img src={"/assets/logo.png"} className="object-cover w-[7rem]" />
-        </span>
+        <Link to="/" className="text-green-500 text-xl font-bold capitalize">
+          <img src="/assets/logo.png" alt="Logo" className="object-cover w-[7rem]" />
+        </Link>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex space-x-6 font-semibold text-black capitalize">
+        <ul className="hidden md:flex space-x-6 font-semibold text-black capitalize items-center">
           {links.map((link, idx) => (
             <li key={idx}>
-              <NavLink
+              <Link
                 to={link.lien}
-                className={({ isActive }) =>
-                  `transition-colors duration-200 hover:text-green-400 ${
-                    isActive ? 'text-green-500 font-bold' : ''
-                  }`
-                }
+                className={`hover:text-green-400 transition-colors duration-200 ${
+                  location.pathname === link.lien ? 'text-green-500' : ''
+                }`}
               >
                 {link.name}
-              </NavLink>
+              </Link>
             </li>
           ))}
+
+          {/* Cart icon */}
+          <li className="relative ml-4">
+            <Link to="/cart">
+              <ShoppingCart className="w-6 h-6 hover:text-green-500 transition" />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  {cartItemCount}
+                </span>
+              )}
+            </Link>
+          </li>
         </ul>
 
         {/* Mobile menu toggle */}
@@ -47,24 +60,29 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {isOpen && (
         <ul className="md:hidden px-4 pb-4 space-y-2 font-semibold text-black capitalize">
           {links.map((link, idx) => (
             <li key={idx}>
-              <NavLink
+              <Link
                 to={link.lien}
-                className={({ isActive }) =>
-                  `transition-colors duration-200 hover:text-green-400 ${
-                    isActive ? 'text-green-500 font-bold' : ''
-                  }`
-                }
-                onClick={() => setIsOpen(false)} // ferme le menu mobile après clic
+                className={`hover:text-green-400 transition-colors duration-200 ${
+                  location.pathname === link.lien ? 'text-green-500' : ''
+                }`}
+                onClick={() => setIsOpen(false)}
               >
                 {link.name}
-              </NavLink>
+              </Link>
             </li>
           ))}
+          {/* Cart icon on mobile */}
+          <li className="flex items-center gap-2 mt-2">
+            <Link to="/cart" className="flex items-center gap-1">
+              <ShoppingCart className="w-5 h-5" />
+              <span>Panier ({cartItemCount})</span>
+            </Link>
+          </li>
         </ul>
       )}
     </header>

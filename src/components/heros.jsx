@@ -2,7 +2,7 @@ import React from 'react'
 
 const Heros = () => {
   return (
-    <header className='header_component'>
+    <header className='header_component min-h-screen items-center sm:flex'>
        <div className="container text-white md:ml-7 px-4 flex flex-col justify-center items-start h-full md:w-[40rem]">
         <h2 className="text-xl md:text-4xl font-bold ">
           Le bon usage du médicament

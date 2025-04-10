@@ -60,18 +60,15 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  /* a:hover {
-    color: #747bff;
-  } */
-  /* button {
-    background-color: #f9f9f9;
-  } */
+
+  
 }
 .header_component{
   background: url("./assets/hero-big-color.jpg") no-repeat;
   background-size: cover;
   width: 100%;
-  height: calc(100vh - 80px);
+  /* height: calc(100vh - 80px); */
+  background-position: center;
 }
 
 @media  only screen  and (max-width:650px) {
